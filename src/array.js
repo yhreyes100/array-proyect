@@ -39,3 +39,21 @@ while(i!=pronoun.length){
   }
   i+=1;
 }
+console.log("-------------------dowhile--------------------");
+i=0;
+do{
+    j=0;
+      do{
+            k=0;
+          do{
+                l=0;
+              do{
+                console.log(pronoun[i]+adj[j]+noun[k]+dom[l]);
+                l+=1;
+              } while(l!=dom.length);
+              k+=1;
+            } while(k!=noun.length);
+            j+=1;            
+        }while(j!=adj.length);
+    i+=1;    
+}while(i!=pronoun.length);
