@@ -2,12 +2,20 @@ let pronoun = ['the', 'our'];
 let adj = ['great', 'big'];
 let noun = ['jogger', 'racoon'];
 let dom = ['.net','.com','.us','.io','.gov'];
+
 console.log("-------------------for-------------------------");
 for(var i=0;i<pronoun.length;i++)
   for(var j=0;j<adj.length;j++)
     for(var k=0;k<noun.length;k++)
       for(var l=0;l<dom.length;l++)
           console.log(pronoun[i]+adj[j]+noun[k]+dom[l]);
+
+console.log("-------------------forof-------------------------");
+for(let ii of pronoun)
+  for(let jj of adj)
+    for(let kk of noun)
+      for(let ll of dom)
+          console.log(ii+jj+kk+ll);
 
 console.log("-------------------forEach--------------------");
 
@@ -20,6 +28,7 @@ pronoun.forEach(element => {
         });
     });
 });
+
 console.log("-------------------while--------------------");
 
  i = 0;
@@ -57,3 +66,18 @@ do{
         }while(j!=adj.length);
     i+=1;    
 }while(i!=pronoun.length);
+
+console.log("-------------------NoLoop--------------------");
+
+function recursion(i=0,j=0,k=0,l=0){
+  if(i>=pronoun.length)return console.log("The End");
+  else if(j>=adj.length){i++;j=0;}
+  else if(k>=noun.length){j++;k=0;}
+  else if(l>=dom.length){k++;l=0;}
+  else{
+    console.log(pronoun[i]+adj[j]+noun[k]+dom[l]);
+    l++;
+  }
+  return recursion(i,j,k,l);
+}
+recursion();
